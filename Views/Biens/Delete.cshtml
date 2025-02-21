@@ -1,0 +1,113 @@
+﻿@model MvcExampleM1GlGroupe2.Models.Bien
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Bien</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LibelleBien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LibelleBien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescriptionBien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescriptionBien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prix_Journalier)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prix_Journalier)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegionBien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegionBien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pays)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pays)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Latitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Longitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NbreChambre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NbreChambre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NbreLit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NbreLit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NbreSalleEaux)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NbreSalleEaux)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeBien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TypeBien)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

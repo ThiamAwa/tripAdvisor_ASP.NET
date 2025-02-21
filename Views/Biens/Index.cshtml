@@ -1,0 +1,130 @@
+﻿@model PagedList.IPagedList<MvcExampleM1GlGroupe2.Models.Bien>
+
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-primary fw-bold text-center" style="font-size: 1.3rem;">Liste des Biens</h2>
+
+<div class="card shadow-sm p-3 mb-3">
+    <h5 class="card-title">Rechercher un bien</h5>
+    @using (Html.BeginForm())
+    {
+        <div class="row">
+            <div class="col-md-4">
+                @Html.Label("Libelle", htmlAttributes: new { @class = "form-label fw-bold", style = "font-size: 0.8rem;" })
+                <div class="col-md-10">
+                    @Html.TextBox("Designation", ViewBag.Designation as string)
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                @Html.Label("Region", htmlAttributes: new { @class = "form-label fw-bold", style = "font-size: 0.8rem;" })
+                <div class="col-md-10">
+                    @Html.TextBox("Region", ViewBag.Region as string)
+                </div>
+            </div>
+            <div class="col-md-4 text-center d-flex align-items-end justify-content-center">
+                <button type="submit" class="btn btn-primary btn-sm"><i class="bi bi-search"></i> Rechercher</button>
+            </div>
+        </div>
+    }
+
+</div>
+<div class="mb-3 text-start">
+    @Html.ActionLink("Ajouter Bien", "Create", null, new { @class = "btn btn-success btn-sm" })
+</div>
+<table class="table table-hover table-bordered text-center align-middle" style="font-size: 0.7rem; max-width: 80%;">
+    <thead class="table-primary">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().LibelleBien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().DescriptionBien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Prix_Journalier)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().RegionBien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Pays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Latitude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Longitude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().NbreChambre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().NbreLit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().NbreSalleEaux)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().TypeBien)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LibelleBien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescriptionBien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prix_Journalier)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegionBien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Latitude)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Longitude)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NbreChambre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NbreLit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NbreSalleEaux)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeBien)
+            </td>
+            <td class="d-flex justify-content-center gap-2">
+                <a href="@Url.Action("Edit", new { id = item.IdBien })" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
+                <a href="@Url.Action("Details", new { id = item.IdBien })" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
+                <a href="@Url.Action("Delete", new { id = item.IdBien })" class="btn btn-danger btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce bien ?');"><i class="bi bi-trash"></i></a>
+            </td>
+        </tr>
+    }
+
+</table>
+<div class="d-flex justify-content-center mt-3">
+    <nav aria-label="Pagination">
+        <ul class="pagination pagination-sm">
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page, Designation = ViewBag.Designation, Region = ViewBag.Region }))
+        </ul>
+    </nav>
+    </div>

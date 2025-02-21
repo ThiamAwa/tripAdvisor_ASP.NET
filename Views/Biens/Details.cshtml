@@ -1,0 +1,83 @@
+﻿@model MvcExampleM1GlGroupe2.Models.Bien
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-primary fw-bold text-center" style="font-size: 1.5rem;">Détails du Bien</h2>
+
+<div class="card shadow-sm p-4 mb-4">
+    <div class="row g-3">
+        <div class="col-md-6">
+            <div class="border rounded p-3 bg-light">
+                <strong>@Html.DisplayNameFor(model => model.LibelleBien):</strong>
+                <p class="text-muted">@Html.DisplayFor(model => model.LibelleBien)</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="border rounded p-3 bg-light">
+                <strong>@Html.DisplayNameFor(model => model.DescriptionBien):</strong>
+                <p class="text-muted">@Html.DisplayFor(model => model.DescriptionBien)</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="border rounded p-3 bg-light">
+                <strong>@Html.DisplayNameFor(model => model.Prix_Journalier):</strong>
+                <p class="text-muted">@Html.DisplayFor(model => model.Prix_Journalier) FCFA</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="border rounded p-3 bg-light">
+                <strong>@Html.DisplayNameFor(model => model.RegionBien):</strong>
+                <p class="text-muted">@Html.DisplayFor(model => model.RegionBien)</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="border rounded p-3 bg-light">
+                <strong>@Html.DisplayNameFor(model => model.Pays):</strong>
+                <p class="text-muted">@Html.DisplayFor(model => model.Pays)</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="border rounded p-3 bg-light">
+                <strong>@Html.DisplayNameFor(model => model.Latitude):</strong>
+                <p class="text-muted">@Html.DisplayFor(model => model.Latitude)</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="border rounded p-3 bg-light">
+                <strong>@Html.DisplayNameFor(model => model.Longitude):</strong>
+                <p class="text-muted">@Html.DisplayFor(model => model.Longitude)</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="border rounded p-3 bg-light">
+                <strong>@Html.DisplayNameFor(model => model.NbreChambre):</strong>
+                <p class="text-muted">@Html.DisplayFor(model => model.NbreChambre)</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="border rounded p-3 bg-light">
+                <strong>@Html.DisplayNameFor(model => model.NbreLit):</strong>
+                <p class="text-muted">@Html.DisplayFor(model => model.NbreLit)</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="border rounded p-3 bg-light">
+                <strong>@Html.DisplayNameFor(model => model.NbreSalleEaux):</strong>
+                <p class="text-muted">@Html.DisplayFor(model => model.NbreSalleEaux)</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="border rounded p-3 bg-light">
+                <strong>@Html.DisplayNameFor(model => model.TypeBien):</strong>
+                <p class="text-muted">@Html.DisplayFor(model => model.TypeBien)</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="text-center">
+    <a href="@Url.Action("Edit", new { id = Model.IdBien })" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i> Modifier</a>
+    <a href="@Url.Action("Index")" class="btn btn-secondary btn-sm"><i class="bi bi-arrow-left"></i> Retour à la liste</a>
+</div>

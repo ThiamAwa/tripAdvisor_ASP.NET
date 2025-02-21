@@ -1,0 +1,92 @@
+﻿@model MvcExampleM1GlGroupe2.Models.Bien
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-primary fw-bold text-center" style="font-size: 1.5rem;">Créer un Bien</h2>
+
+<div class="card shadow-sm p-4 mb-4">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label class="form-label fw-bold">@Html.DisplayNameFor(model => model.LibelleBien)</label>
+                @Html.EditorFor(model => model.LibelleBien, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LibelleBien, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label fw-bold">@Html.DisplayNameFor(model => model.DescriptionBien)</label>
+                @Html.EditorFor(model => model.DescriptionBien, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DescriptionBien, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label fw-bold">@Html.DisplayNameFor(model => model.Prix_Journalier)</label>
+                @Html.EditorFor(model => model.Prix_Journalier, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Prix_Journalier, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label fw-bold">@Html.DisplayNameFor(model => model.RegionBien)</label>
+                @Html.EditorFor(model => model.RegionBien, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RegionBien, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label fw-bold">@Html.DisplayNameFor(model => model.Pays)</label>
+                @Html.EditorFor(model => model.Pays, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Pays, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label fw-bold">@Html.DisplayNameFor(model => model.Latitude)</label>
+                @Html.EditorFor(model => model.Latitude, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Latitude, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label fw-bold">@Html.DisplayNameFor(model => model.Longitude)</label>
+                @Html.EditorFor(model => model.Longitude, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Longitude, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label fw-bold">@Html.DisplayNameFor(model => model.NbreChambre)</label>
+                @Html.EditorFor(model => model.NbreChambre, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NbreChambre, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label fw-bold">@Html.DisplayNameFor(model => model.NbreLit)</label>
+                @Html.EditorFor(model => model.NbreLit, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NbreLit, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label fw-bold">@Html.DisplayNameFor(model => model.NbreSalleEaux)</label>
+                @Html.EditorFor(model => model.NbreSalleEaux, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NbreSalleEaux, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label fw-bold">@Html.DisplayNameFor(model => model.TypeBien)</label>
+                @Html.EditorFor(model => model.TypeBien, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TypeBien, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-success"><i class="bi bi-plus-square"></i> Créer</button>
+            <a href="@Url.Action("Index")" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Retour</a>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

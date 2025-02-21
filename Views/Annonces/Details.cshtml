@@ -1,0 +1,44 @@
+﻿@model MvcExampleM1GlGroupe2.Models.Annonce
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-primary fw-bold text-center" style="font-size: 1.5rem;">Détails de l'Annonce</h2>
+
+<div class="card shadow-sm p-4 mb-4">
+    <h5 class="card-title text-center text-dark" style="font-size: 1.2rem; font-weight: bold;">Informations de l'Annonce</h5>
+    <div class="row g-3">
+        <div class="col-md-6">
+            <div class="border rounded p-3 bg-light">
+                <strong>@Html.DisplayNameFor(model => model.Bien.LibelleBien):</strong>
+                <p class="text-muted">@Html.DisplayFor(model => model.Bien.LibelleBien)</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="border rounded p-3 bg-light">
+                <strong>@Html.DisplayNameFor(model => model.DateDebut):</strong>
+                <p class="text-muted">@Html.DisplayFor(model => model.DateDebut)</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="border rounded p-3 bg-light">
+                <strong>@Html.DisplayNameFor(model => model.DateFin):</strong>
+                <p class="text-muted">@Html.DisplayFor(model => model.DateFin)</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="border rounded p-3 bg-light">
+                <strong>@Html.DisplayNameFor(model => model.Statut_Annonce):</strong>
+                <p class="text-muted">@Html.DisplayFor(model => model.Statut_Annonce)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="text-center">
+    <a href="@Url.Action("Edit", new { id = Model.IdAnnonce })" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i> Modifier</a>
+    <a href="@Url.Action("Index")" class="btn btn-secondary btn-sm"><i class="bi bi-arrow-left"></i> Retour à la liste</a>
+</div>
+

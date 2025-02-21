@@ -1,0 +1,52 @@
+﻿@model MvcExampleM1GlGroupe2.Models.Annonce
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2 class="text-primary fw-bold text-center" style="font-size: 1.5rem;">Créer une Annonce</h2>
+
+<div class="card shadow-sm p-4 mb-4">
+    <h5 class="card-title text-center text-dark" style="font-size: 1.2rem; font-weight: bold;">Formulaire de Création</h5>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label class="form-label fw-bold">@Html.DisplayNameFor(model => model.DateDebut)</label>
+                @Html.EditorFor(model => model.DateDebut, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DateDebut, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label fw-bold">@Html.DisplayNameFor(model => model.DateFin)</label>
+                @Html.EditorFor(model => model.DateFin, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DateFin, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label fw-bold">@Html.DisplayNameFor(model => model.Statut_Annonce)</label>
+                @Html.EditorFor(model => model.Statut_Annonce, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Statut_Annonce, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label fw-bold">@Html.LabelFor(model => model.IdBien, "Bien")</label>
+                @Html.DropDownList("IdBien", null, "Sélectionner un bien...", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IdBien, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-success"><i class="bi bi-plus-square"></i> Créer</button>
+            <a href="@Url.Action("Index")" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Retour</a>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
