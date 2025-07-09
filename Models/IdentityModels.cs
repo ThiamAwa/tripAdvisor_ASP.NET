@@ -20,8 +20,7 @@ namespace MvcExampleM1GlGroupe2.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+        public ApplicationDbContext():base("DefaultConnect", throwIfV1Schema: false)
         {
         }
 

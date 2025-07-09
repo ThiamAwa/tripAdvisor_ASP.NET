@@ -1,34 +1,31 @@
-﻿using MvcExampleM1GlGroupe2.App_Start;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
+using groupeAspNet.Models;
 
-namespace MvcExampleM1GlGroupe2.Controllers
+namespace groupeAspNet.Controllers;
+
+public class HomeController : Controller
 {
-    [Authorize]
-    public class HomeController : Controller
+    private readonly ILogger<HomeController> _logger;
+
+    public HomeController(ILogger<HomeController> logger)
     {
-        public ActionResult Index()
-        {
-            this.Flash("Message de test", FlashLevel.Success);
-            
-            return View();
-        }
+        _logger = logger;
+    }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
+    public IActionResult Index()
+    {
+        return View();
+    }
 
-            return View();
-        }
+    public IActionResult Privacy()
+    {
+        return View();
+    }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    public IActionResult Error()
+    {
+        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }

@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35521.163 d17.12
+VisualStudioVersion = 17.12.35521.163
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcExampleM1GlGroupe2", "MvcExampleM1GlGroupe2.csproj", "{95F6DEBE-A66B-4F00-8B15-7AC7845FB790}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetierTripAdvisor", "..\MetierTripAdvisor\MetierTripAdvisor.csproj", "{E7C6898B-B130-4E56-8C6D-5E41A65DC98B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiiTripAdvisor", "..\ApiiTripAdvisor\ApiiTripAdvisor.csproj", "{A8B24146-2E6B-49FE-99EC-CF6593B34184}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +19,19 @@ Global
 		{95F6DEBE-A66B-4F00-8B15-7AC7845FB790}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95F6DEBE-A66B-4F00-8B15-7AC7845FB790}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95F6DEBE-A66B-4F00-8B15-7AC7845FB790}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7C6898B-B130-4E56-8C6D-5E41A65DC98B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7C6898B-B130-4E56-8C6D-5E41A65DC98B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7C6898B-B130-4E56-8C6D-5E41A65DC98B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7C6898B-B130-4E56-8C6D-5E41A65DC98B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8B24146-2E6B-49FE-99EC-CF6593B34184}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8B24146-2E6B-49FE-99EC-CF6593B34184}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8B24146-2E6B-49FE-99EC-CF6593B34184}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8B24146-2E6B-49FE-99EC-CF6593B34184}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A520196-EB54-4EE9-9418-324B99573E97}
 	EndGlobalSection
 EndGlobal
